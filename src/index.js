@@ -1,3 +1,4 @@
-import { greeting } from "./greeting.js";
+import "./styles.css";
+import {loadHomePage} from './homePage.js';
 
-console.log(greeting);
+loadHomePage();

@@ -1,4 +1,4 @@
-import foodBackgroundImage from './food-background.jpg';
+import foodBackgroundImage from './images/food-background.jpg';
 import "./styles.css";
 
 export function loadHomePage() {
@@ -6,6 +6,7 @@ export function loadHomePage() {
 
     const img = document.createElement('img');
     img.src = foodBackgroundImage;
+    img.alt = "Homepage background image";
     
     const div = document.createElement('div');
     

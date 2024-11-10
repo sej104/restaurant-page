@@ -1,0 +1,129 @@
+@import url(https://fonts.bunny.net/css?family=allura:400);
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr;
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+button {
+    appearance: none;
+    cursor: pointer;
+    background: transparent;
+    text-transform: uppercase;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+a {
+    color: inherit;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header button {
+    border: none;
+    font-weight: 800;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1;
+}
+
+h2, h3 {
+    font-family: 'Allura', handwriting;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+
+#content {
+    position: relative;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+}
+
+#content h2 {
+    font-size: 3rem;
+}
+
+#content div {
+    position: absolute;
+    color: #fff;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#content button {
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 15px 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+#content h1,
+#content p {
+    margin-bottom: 20px;
+}
+
+p {
+    max-inline-size: 60ch;
+    text-align: center;
+    font-weight: 600;
+}

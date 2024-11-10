@@ -1,4 +1,5 @@
 import foodBackgroundImage from './food-background.jpg';
+import "./styles.css";
 
 export function loadHomePage() {
     const content = document.querySelector("#content");
@@ -21,7 +22,6 @@ export function loadHomePage() {
     button.textContent = 'View Our Menu';
     
     div.append(h2, h1, para, button);
-    
     content.append(img, div);
 }
 

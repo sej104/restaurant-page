@@ -1,12 +1,12 @@
-import foodBackgroundImage from './images/food-background.jpg';
-import "./styles.css";
+import homeBackgroundImage from './images/home-background.jpg';
 
 export function loadHomePage() {
-    const content = document.querySelector("#content");
+    const homePageContainer = document.createElement('div');
+    homePageContainer.id = 'home-content';
 
     const img = document.createElement('img');
-    img.src = foodBackgroundImage;
-    img.alt = "Homepage background image";
+    img.src = homeBackgroundImage;
+    img.alt = 'Homepage background image';
     
     const div = document.createElement('div');
     
@@ -23,6 +23,9 @@ export function loadHomePage() {
     button.textContent = 'View Our Menu';
     
     div.append(h2, h1, para, button);
-    content.append(img, div);
+    homePageContainer.append(img, div);
+
+    const content = document.querySelector("#content");
+    content.append(homePageContainer);
 }
 

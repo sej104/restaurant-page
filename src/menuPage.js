@@ -8,7 +8,6 @@ import seaFoodImage from './images/seafood.jpg';
 import sandwichImage from './images/sandwich.jpg';
 import dessertImage from './images/dessert.jpeg';
 import drinkImage from './images/wine.png';
-import './menu.css';
 
 function createImage(src, alt) {
     const img = document.createElement('img');
@@ -27,6 +26,9 @@ function createCard(title, src, alt) {
 }
 
 export function loadMenuPage() {
+    const menuPageContainer = document.createElement('div');
+    menuPageContainer.id = 'menu-content';
+
     const img = createImage(menuBackgroundImage, "Menu background image");
     let div = document.createElement('div');
 
@@ -39,7 +41,7 @@ export function loadMenuPage() {
     div.append(h1, para);
 
     const heroContainer = document.createElement('div');
-    heroContainer.classList.add('hero');
+    heroContainer.classList.add('hero-container');
     heroContainer.append(img, div);
 
     const appetizer = createCard('Appetizers', appetizerImage, 'Appetizer');
@@ -57,6 +59,8 @@ export function loadMenuPage() {
     cardContainer.append(appetizer, salad, soup, pizza, pasta, seaFood, sandwich,
         dessert, drink);
     
+    menuPageContainer.append(heroContainer, cardContainer);
+
     const content = document.querySelector('#content');
-    content.append(heroContainer, cardContainer);
+    content.append(menuPageContainer);
 }

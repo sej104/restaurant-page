@@ -61,7 +61,7 @@ header h3 {
     font-size: 2rem;
 }
 
-ul {
+header ul {
     padding: 0;
     list-style: none;
     display: flex;
@@ -191,5 +191,50 @@ p {
             background-color: #0009;
             width: 100%;
         }
+    }
+}
+
+/* Contact styles */
+#contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    background-color: #000;
+    height: 100%;
+    position: relative;
+
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+    }
+
+    .contact-info {
+        position: absolute;
+        top: 10%;
+
+        > div {
+            margin-bottom: 20px;
+        }
+    }
+    
+    h1 {
+        text-align: center;
+        margin-bottom: 5px;
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        text-align: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 1.56rem;
+        margin-bottom: 5px;
+    }
+
+    p {
+        font-size: 1.25rem;
+        max-inline-size: 45ch;
     }
 }

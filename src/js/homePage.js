@@ -1,4 +1,4 @@
-import homeBackgroundImage from './images/home-background.jpg';
+import homeBackgroundImage from '../images/home-background.jpg';
 
 export function loadHomePage() {
     const img = document.createElement('img');

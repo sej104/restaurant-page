@@ -1,7 +1,7 @@
 import { loadHomePage } from './homePage.js';
 import { loadMenuPage } from './menuPage.js';
 import { loadContactPage } from './contactPage.js';
-import './styles.css';
+import '../styles.css';
 
 const content = document.querySelector('#content');
 const homeButton = document.querySelector('#home-btn');

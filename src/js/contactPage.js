@@ -1,4 +1,4 @@
-import contactBackgroundImage from './images/contact-background.jpg';
+import contactBackgroundImage from '../images/contact-background.jpg';
 
 function createContactInfo(headingType, title, content1, content2) {
     const div = document.createElement('div');

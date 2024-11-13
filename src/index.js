@@ -1,9 +1,7 @@
 import { loadHomePage } from './homePage.js';
-import {loadMenuPage} from './menuPage.js';
+import { loadMenuPage } from './menuPage.js';
 import { loadContactPage } from './contactPage.js';
 import './styles.css';
-
-loadHomePage();
 
 const content = document.querySelector('#content');
 const homeButton = document.querySelector('#home-btn');
@@ -25,3 +23,4 @@ contactButton.addEventListener('click', () => {
     loadContactPage();
 });
 
+loadHomePage();

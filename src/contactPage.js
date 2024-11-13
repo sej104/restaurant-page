@@ -1,58 +1,42 @@
 import contactBackgroundImage from './images/contact-background.jpg';
 
-export function loadContactPage() {
-    const contactPageContainer = document.createElement('div');
-    contactPageContainer.id = 'contact-content';
+function createContactInfo(headingType, title, content1, content2) {
+    const div = document.createElement('div');
+    const heading = document.createElement(headingType);
+    heading.textContent = title; 
+    const para = document.createElement('p');
+    para.textContent = content1;
+    div.append(heading, para);
+    if (content2) {
+        const para = document.createElement('p');
+        para.textContent = content2;
+        div.append(para);
+    }
+    return div;
+}
 
+export function loadContactPage() {
     const img = document.createElement('img');
     img.src = contactBackgroundImage;
     img.alt = 'Contact background';
 
-    const contactInfo = document.createElement('div');
-    contactInfo.classList.add('contact-info');
+    const contactInfoContainer = document.createElement('div');
+    contactInfoContainer.classList.add('contact-info');
 
-    const titleContainer = document.createElement('div');
-    const titleHeader = document.createElement('h1');
-    titleHeader.textContent = 'Contact Us';
-    const titleContent = document.createElement('p');
-    titleContent.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum nam quod, officiis alias ut qui exercitationem dolores';
-    titleContainer.append(titleHeader, titleContent);
+    const contactPageContent = document.createElement('div');
+    contactPageContent.id = 'contact-content';
+    contactInfoContainer.append(
+        createContactInfo('h1', 'Contact Us', `Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Illum nam quod, officiis alias ut 
+            qui exercitationem dolores`),
+        createContactInfo('h2', 'Hours', 'Monday-Friday: 11am - 10pm',
+            'Saturday-Sunday: 11am - 11pm'),
+        createContactInfo('h2', 'Location', '123 Main Street, New York, NY 10002'),
+        createContactInfo('h2', 'Phone', '(123) 456-7890'),
+        createContactInfo('h2', 'Email', 'info@saporediitalia.com')
+    );
 
-    const hoursContainer = document.createElement('div');
-    const hoursHeader = document.createElement('h2');
-    hoursHeader.textContent = "Hours";
-    const hoursContent = document.createElement('p');
-    hoursContent.textContent = 'Monday-Friday: 11am - 10pm';
-    const hoursSecondContent = document.createElement('p');
-    hoursSecondContent.textContent = 'Saturday-Sunday: 11am - 11pm';
-    hoursContainer.append(hoursHeader, hoursContent, hoursSecondContent);
-
-    const locationContainer = document.createElement('div');
-    const locationHeader = document.createElement('h2');
-    locationHeader.textContent = 'Location';
-    const locationContent = document.createElement('p');
-    locationContent.textContent = '123 Main Street, New York, NY 10002';
-    locationContainer.append(locationHeader, locationContent);
-
-    const phoneContainer = document.createElement('div');
-    const phoneHeader = document.createElement('h2');
-    phoneHeader.textContent = 'Phone';
-    const phoneContent = document.createElement('p');
-    phoneContent.textContent = '(123) 456-7890';
-    phoneContainer.append(phoneHeader, phoneContent);
-
-    const emailContainer = document.createElement('div');
-    const emailHeader = document.createElement('h2');
-    emailHeader.textContent = 'Email';
-    const emailContent = document.createElement('p');
-    emailContent.textContent = 'info@saporediitalia.com';
-    emailContainer.append(emailHeader, emailContent);
-
-    contactInfo.append(titleContainer, hoursContainer, locationContainer, 
-        phoneContainer, emailContainer);
-
-    contactPageContainer.append(img, contactInfo);
+    contactPageContent.append(img, contactInfoContainer);
     
-    const content = document.querySelector("#content");
-    content.append(contactPageContainer);
+    document.querySelector("#content").append(contactPageContent);
 }
